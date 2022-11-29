@@ -119,10 +119,6 @@ function App() {
     <br/>
   </Form.Group>
   <Form.Group className="mb-3">
-  <Form.Label>
-    Referred By Code:
-  </Form.Label>
-  <br/>
   <Form.Control  
     className="form-control referred_by_code disabledInput" 
     aria-disabled="disabled" 
