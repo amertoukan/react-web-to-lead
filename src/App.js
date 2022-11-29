@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import {useEffect, useState} from 'react';
-import './App.css';
 
-import {} from 'react-bootstrap'
+
+import { Button, Form } from 'react-bootstrap'
 
 
 // function getRSCode(){
@@ -37,17 +37,18 @@ function App() {
     let URLParams = new URLSearchParams(queryString); 
   })
   return(
-  <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+  <Form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
   <input type="hidden" name="oid" value="00D8b0000013hDd"/>
   {/**
    * First Name
    */}
-  <div className="mb-3">
-    <label>
+  <Form.Group className="mb-3" controlId='formBasicEmail'>
+    <Form.Label>
       First Name:
-    </label>
+    </Form.Label>
     <br/>
-    <input   
+    <Form.Control 
+      placeholder="Enter the Lead's First Name"  
       className="form-control" 
       id="first_name" 
       maxLength="40" 
@@ -55,18 +56,19 @@ function App() {
       size="20" 
       type="text" 
     />
-  </div>
+  </Form.Group>
 
   {/**
    * Last Name
    */}
   
-  <div className="mb-3">
-    <label>
+  <Form.Group className="mb-3">
+    <Form.Label>
       Last Name:
-    </label>
+    </Form.Label>
     <br/>
-    <input  
+    <Form.Control  
+      placeholder="Enter the Lead's Last Name"
       className="form-control" 
       id="last_name" 
       maxLength="80" 
@@ -75,17 +77,18 @@ function App() {
       type="text"
     />
     <br/>
-  </div>
+  </Form.Group>
   
   {/**
    * Email
    */}
-  <div className="mb-3">
-    <label>
+  <Form.Group className="mb-3">
+    <Form.Label>
       Email:
-    </label>
+    </Form.Label>
     <br/>
-    <input  
+    <Form.Control
+      placeholder="Enter the Lead's Email"  
       className="form-control" 
       id="email" 
       maxLength="80" 
@@ -94,16 +97,16 @@ function App() {
       type="text"
     />
     <br/>
-  </div>
+  </Form.Group>
    {/**
     * Company
     */}
-  <div className="mb-3">
-    <label>
+  <Form.Group className="mb-3">
+    <Form.Label>
       Company:
-    </label>
+    </Form.Label>
     <br/>
-    <input   
+    <Form.Control 
       className="form-control" 
       id="company" 
       maxLength="40" 
@@ -112,13 +115,13 @@ function App() {
       type="text" 
     />
     <br/>
-  </div>
-  <div className="mb-3">
-  <label>
+  </Form.Group>
+  <Form.Group className="mb-3">
+  <Form.Label>
     Referred By Code:
-  </label>
+  </Form.Label>
   <br/>
-  <input  
+  <Form.Control  
     className="form-control referred_by_code disabledInput" 
     aria-disabled="disabled" 
     id="00N8b00000DVVW0" 
@@ -129,17 +132,22 @@ function App() {
     defaultValue="1234"
   />
   <br/>
-  </div>
+  </Form.Group>
   {/**
    * Submit
    */}
-   <input 
-    className ="btn btn-success btn-lg" 
+   <div className='d-grip gap-2'>
+   <Button 
+    variant="success" 
+    size="lg"
     type="submit" 
     name="submit" 
-    style={{"width": "100%"}}
-  />
-  </form>
+
+  >
+    Submit
+  </Button>
+   </div>
+  </Form>
 )}
 
     
