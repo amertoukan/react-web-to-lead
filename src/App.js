@@ -28,13 +28,15 @@ import { Button, Form } from 'react-bootstrap'
 function App() {
   const [rsCode, setRSCode]= useState();
   const [codeParams, setCodeParams] = useState();
-
-// window.URLParams.get('rsCode')
-  console.log(codeParams)
+ 
   useEffect(()=>{
-
     let queryString = window.location.search; 
     let URLParams = new URLSearchParams(queryString); 
+    const params = URLParams.get('rsCode')
+    setRSCode(params)
+
+
+   
   })
   return(
   <Form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
@@ -129,7 +131,8 @@ function App() {
     name="00N8b00000DVVW0" 
     size="20" 
     type="text"
-    defaultValue="1234"
+    defaultValue={rsCode}
+    disabled
   />
   <br/>
   </Form.Group>
