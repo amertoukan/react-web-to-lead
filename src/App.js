@@ -130,9 +130,8 @@ function App() {
     maxLength="255" 
     name="00N8b00000DVVW0" 
     size="20" 
-    type="text"
+    type="hidden"
     defaultValue={rsCode}
-    disabled
   />
   <br/>
   </Form.Group>
