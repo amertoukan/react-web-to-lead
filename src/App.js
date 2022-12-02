@@ -104,7 +104,6 @@ function App() {
     maxLength="255" 
     name="00N8b00000DVVW0" 
     size="20" 
-    type="hidden"
     defaultValue={rsCode}
   />
   <br/>
