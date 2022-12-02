@@ -100,10 +100,11 @@ function App() {
   <Form.Control  
     className="form-control referred_by_code disabledInput" 
     aria-disabled="disabled" 
-    id="00N8b00000DVVW0" 
+    id="00N5f00000MMLqV" 
     maxLength="255" 
-    name="00N8b00000DVVW0" 
+    name="00N5f00000MMLqV" 
     size="20" 
+    type="hidden"
     defaultValue={rsCode}
   />
   <br/>
