@@ -5,26 +5,6 @@ import {useEffect, useState} from 'react';
 import { Button, Form } from 'react-bootstrap'
 
 
-// function getRSCode(){
-
-//     let rsCode__param = URLParams.get('rsCode');
-//     let referredByCodeField = document.getElementById('referred_by_code');
-    
-//     console.log(`URLParams: ${URLParams}`)
-//     console.log(`queryString: ${queryString}`)
-//     console.log(`referredByCodeField: ${referredByCodeField}`) 
-//     if(rsCode__param == null){
-//         rsCode = localStorage.getItem('rsCode') 
-//         referredByCodeField.value = rsCode;
-        
-//     } else {
-//         window.localStorage.setItem('rsCode', rsCode__param)
-//         let rsCode = localStorage.getItem('rsCode')
-//         document.getElementById('referred_by_code').value = rsCode;
-//     }
-//   }
-
-
 function App() {
   const [rsCode, setRSCode]= useState();
   const [codeParams, setCodeParams] = useState();
@@ -40,7 +20,7 @@ function App() {
   })
   return(
   <Form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
-  <input type="hidden" name="oid" value="00D8b0000013hDd"/>
+  <input type="hidden" name="oid" value="00D5f000005x2AN"/>
   {/**
    * First Name
    */}
@@ -157,7 +137,7 @@ function App() {
     <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
     <!--  these lines if you wish to test in debug mode.                          -->
     <!--  <input type="hidden" name="debug" value=1>                              -->
-    <!--  <input type="hidden" name="debugEmail" value="toukan.amer@gmail.com">   -->
+    <!--  <input type="hidden" name="debugEmail" value="klip@saasquatch.com">   -->
   <!--  ----------------------------------------------------------------------  --> */}
 
 export default App;
