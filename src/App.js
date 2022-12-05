@@ -8,12 +8,17 @@ import { Button, Form } from 'react-bootstrap'
 function App() {
   const [rsCode, setRSCode]= useState();
   const [codeParams, setCodeParams] = useState();
+  const [disabled, setDisabled] = useState(false); 
  const getCode = ()=>{
   let queryString = window.location.search; 
   let URLParams = new URLSearchParams(queryString); 
   const params = URLParams.get('rsCode')
   setRSCode(params)
   console.log(rsCode)
+ }
+ function submit(e){
+  e.preventDefault(); 
+  setDisabled(!disabled)
  }
   useEffect(()=>{
     getCode()
@@ -121,6 +126,8 @@ function App() {
     size="lg"
     type="submit" 
     name="submit" 
+    disabled={disabled}
+    onSubmit={submit}
 
   >
     Submit
