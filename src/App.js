@@ -40,8 +40,12 @@ function App() {
   })  
 
   return(
-  <Form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
-  <input type="hidden" name="oid" value="00D5f000005x2AN"/>
+
+  /**
+   * SETUP YOUR SALESFORCE ORG UNDER action AND value (org ID). 
+   */
+  <Form action="" method="POST">
+  <input type="hidden" name="oid" value=""/>
   {/**
    * First Name
    */}
