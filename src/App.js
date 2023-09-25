@@ -12,6 +12,7 @@ function App() {
  const getCode = ()=>{
   let queryString = window.location.search; 
   let URLParams = new URLSearchParams(queryString); 
+
   const params = URLParams.get('rsCode')
   setRSCode(params)
   console.log(rsCode)
@@ -21,9 +22,23 @@ function App() {
   setDisabled(!disabled)
  }
   useEffect(()=>{
-    getCode()
+
+  // Get rsCode from URL.
+  const params = URLParams.get('rsCode');
+
+  // If rsCode is found in the URL, store it in state and localStorage.
+  if (params) {
+    setRSCode(params);
+    localStorage.setItem('rsCode', params);
+  } else {
+    // If rsCode is not found in the URL, get it from localStorage.
+    const storedRSCode = localStorage.getItem('rsCode');
+    if (storedRSCode) {
+      setRSCode(storedRSCode);
+    }
+  }
   })  
-  rsCode == null ? getCode(): ''
+
   return(
   <Form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
   <input type="hidden" name="oid" value="00D5f000005x2AN"/>
